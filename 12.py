@@ -2,6 +2,7 @@ import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
 import requests
+import os
 client = commands.Bot(command_prefix = "#")
 token = "NTU4MzI4NzIzNjM2NzQ4MzA2.D3VPvQ.mXauhV-aAVnIi0MW0lvYE8KnDqc"
 
@@ -26,4 +27,4 @@ async def on_message(message):
         end[0] = end[0].replace('</b>', '')
         await client.send_message(message.channel, end[0])
 
-client.run(token)
+client.run(os.getenv('TOKEN'))
